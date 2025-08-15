@@ -1,0 +1,19 @@
+.simple-footer {
+  background-color: #fafafa;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  border-top: 1px solid #eee;
+  line-height: 1.8;
+}
+
+.simple-footer a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.simple-footer a:hover {
+  text-decoration: underline;
+}

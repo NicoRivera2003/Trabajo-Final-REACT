@@ -1,0 +1,52 @@
+.abuela-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.abuela-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.abuela-texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.abuela-texto h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.abuela-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.abuela-imagen {
+  flex: 1;
+  min-width: 280px;
+}
+
+.abuela-imagen img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.firma {
+    font-style: italic;
+    margin-top: 2rem;
+    color: #777; 
+}
