@@ -1,5 +1,4 @@
 .header {
- 
   position: fixed;
   top: 0;
   left: 0;
@@ -36,19 +35,18 @@
   gap: 6rem;
 }
 
-.header__nav a {
+.nav__link {
   text-decoration: none;
   color: #222;
   font-weight: 500;
   font-size: 1.1rem;
 }
 
-.header__nav a:hover,
-.header__nav a:focus {
+.nav__link:hover,
+.nav__link:focus {
   border-bottom: 2px solid #000;
   background-color: lightgoldenrodyellow;
   border-radius: 4px;
-
 }
 
 .header__icons {

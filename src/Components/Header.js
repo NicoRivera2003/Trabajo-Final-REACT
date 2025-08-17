@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 import "./Header.css";
 import {
   FiSearch,
   FiShoppingCart,
   FiUser,
 } from "react-icons/fi"; /*Librería de iconos de React "Fi "*/
+import { Link } from "react-router-dom";
 
-const Header = () =>  {
+const Header = () => {
   return (
     <header className="header">
       <div className="header__top">
@@ -17,9 +18,15 @@ const Header = () =>  {
 
       <div className="header__bottom">
         <nav className="header__nav">
-          <a href="#">Inicio</a>
-          <a href="#">Catálogo</a>
-          <a href="#">Contacto</a>
+          <Link to="/" className="nav__link">
+            Inicio
+          </Link>
+          <Link to="/catalogo" className="nav__link">
+            Catálogo
+          </Link>
+          <Link to="/contacto" className="nav__link">
+            Contacto
+          </Link>
         </nav>
 
         <div className="header__icons">
@@ -35,7 +42,7 @@ const Header = () =>  {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

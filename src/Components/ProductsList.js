@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./ProductsList.css";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -26,15 +27,53 @@ const products = [
     price: "$10.000,00 COP",
     image: "/Img-alinos/Vinagreta.jpeg",
   },
+  {
+    id: 5,
+    name: "Sal con especias",
+    price: "$10.000,00 COP",
+    image: "Img-alinos/SalConEspecias.jpeg",
+  },
+  {
+    id: 6,
+    name: "Miel pura de doña Eliza",
+    price: "$20.000,00 COP",
+    image: "/Img-alinos/MielPura.jpeg",
+  },
+  {
+    id: 7,
+    name: "Galleticas de doña Eliza / Chocolate",
+    price: "$12.000,00",
+    image: "Img-alinos/Galleticas.jpeg",
+  },
+  {
+    id: 8,
+    name: "Café de doña Eliza/ 250gr",
+    price: "$15.000,00",
+    image: "Img-alinos/Cafe.jpeg",
+  },
+  {
+    id: 9,
+    name: "Sazón de Hogar / Selección Casera de Doña Eliza",
+    price: "$50.000,00",
+    image: "Img-alinos/Ancheta.jpeg",
+  },
+  {
+    id: 10,
+    name: "Ritual de Café / Caja de regalo",
+    price: "$40.000,00",
+    image: "Img-alinos/CajaRegalo.jpeg",
+  },
 ];
 
-const ProductList = () => {
+const ProductList = ({ showAll }) => {
+  const navigate = useNavigate();
+  const displayedProducts = showAll ? products : products.slice(0, 4);
 
   return (
     <section className="product-section">
       <h2>PRODUCTOS</h2>
       <div className="product-grid">
-        {products.map((product) => (
+        {displayedProducts.map((product) => (
           <div className="product-card" key={product.id}>
             <img src={product.image} alt={product.name} />
             <div className="product-info">
@@ -44,7 +83,12 @@ const ProductList = () => {
           </div>
         ))}
       </div>
-      <button className="view-all-btn">VER TODO</button>
+
+      {!showAll && (
+        <button className="view-all-btn" onClick={() => navigate("/catalogo")}>
+          VER TODO
+        </button>
+      )}
     </section>
   );
 };
