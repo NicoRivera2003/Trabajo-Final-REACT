@@ -1,5 +1,10 @@
+/* Estilos generales */
 .App {
   text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -13,6 +18,7 @@
   }
 }
 
+/* Header */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +30,58 @@
   color: white;
 }
 
+/* Enlaces */
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsividad general para contenedores principales */
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0.3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-logo {
+    height: 25vmin;
+  }
+
+  .App-header {
+    font-size: 14px;
+  }
+}
+
+/* Para móviles y tablets pequeños (hasta 768px) */
+@media (max-width: 768px) {
+  main {
+    padding: 0.5rem;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-header {
+    font-size: 16px;
+  }
+}
+
+/* Para tablets medianos (hasta 1024px) */
+@media (max-width: 1024px) {
+  main {
+    padding: 0.75rem;
+  }
+
+  .App-logo {
+    height: 35vmin;
+  }
+
+  .App-header {
+    font-size: 18px;
   }
 }

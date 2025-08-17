@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 import "./AbuelaHistoria.css";
 
 const AbuelaHistoria = () => {
-
   return (
     <section className="abuela-section">
       <div className="abuela-container">
@@ -19,7 +18,10 @@ const AbuelaHistoria = () => {
         </div>
 
         <div className="abuela-imagen">
-          <img src="/Img-alinos/ImagenAbuela.jpg" alt="Elizabeth Rivera - Fundadora" />
+          <img
+            src={`${process.env.PUBLIC_URL}/Img-alinos/ImagenAbuela.jpg`}
+            alt="Elizabeth Rivera - Fundadora"
+          />
         </div>
       </div>
     </section>

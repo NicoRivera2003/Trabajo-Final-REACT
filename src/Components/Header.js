@@ -33,7 +33,10 @@ const Header = () => {
     <header className="header">
       <div className="header__top">
         <div className="header__logo">
-          <img src="/Img-alinos/LogoAbuela.png" alt="Logo Abuela" />
+          <img
+            src={`${process.env.PUBLIC_URL}/Img-alinos/LogoAbuela.png`}
+            alt="Logo Abuela"
+          />
         </div>
       </div>
 
