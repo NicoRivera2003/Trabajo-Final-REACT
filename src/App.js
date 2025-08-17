@@ -4,6 +4,7 @@ import ProductList from "./Components/ProductsList";
 import AbuelaHistoria from "./Components/AbuelaHistoria"; /*Importo los componentes que vaya creando*/
 import Footer from "./Components/Footer";
 import Catalogo from "./Pages/Catalogo";
+import Contacto from "./Pages/Contacto";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
               </>
             }
           />
-          <Route path="/Catalogo" element={<Catalogo />} />
+          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
       <Footer />
