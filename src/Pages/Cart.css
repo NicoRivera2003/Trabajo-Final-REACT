@@ -23,3 +23,17 @@
   color: #333;
   text-decoration: underline;
 }
+
+@media (max-width: 1024px) {
+  .cart-page {
+    margin-top: 200px;
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-page {
+    margin-top: 100px;
+    padding: 30px 10px;
+  }
+}

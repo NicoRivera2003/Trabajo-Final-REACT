@@ -2,8 +2,8 @@ import React from "react";
 import "./ProductsList.css";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Fuse from "fuse.js";
 
+/* Lista de productos con características*/
 const products = [
   {
     id: 1,

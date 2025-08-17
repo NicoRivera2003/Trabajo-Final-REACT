@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 import "./Footer.css";
 
+/* Footer sencillo */
 const Footer = () => {
   return (
     <footer className="simple-footer">

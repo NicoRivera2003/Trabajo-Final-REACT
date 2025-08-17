@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Contacto.css";
 
 const Contacto = () => {
+  /*Hooks de control de estado*/
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -9,7 +10,7 @@ const Contacto = () => {
 
   const handleEnviar = (e) => {
     e.preventDefault();
-
+    /* Dirección de whatShapp para comunicación*/
     const mensaje = `Hola, soy ${nombre}. Mi correo es ${correo}, mi número es ${telefono}. Comentario: ${comentario}`;
     const numero = "573043052568";
     window.open(

@@ -8,7 +8,6 @@
 
 .product-section h2 {
   font-size: 2.5rem;
-  /*margin-bottom: 3rem;*/
   color: #333;
   font-weight: bold;
   margin-top: 270px;
@@ -18,16 +17,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 50px;
-  /*gap: 2.5rem;*/
   max-width: 1200px;
   margin: 0 auto;
   align-items: stretch;
-  justify-items: start; /*-----------*/
-  padding: 20px; /*-------*/
+  justify-items: start;
+  padding: 20px;
 }
 
 .product-card {
-  width: 200px; /*------*/
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -114,4 +112,38 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    margin-top: 100px; /* menos margen superior en móvil */
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .product-section h2 {
+    font-size: 2rem;
+    margin-top: 80px; /* ajustar margen superior para móvil */
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center; /* centra las tarjetas */
+    padding: 10px;
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .view-all-btn {
+    width: 90%;
+    max-width: 300px;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+  }
 }

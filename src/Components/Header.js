@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  /* Hooks se control de estados */
   const [busqueda, setBusqueda] = useState("");
   const [mostrarInput, setMostrarInput] = useState(false);
   const [menuAbierto, setMenuAbierto] = useState(false);

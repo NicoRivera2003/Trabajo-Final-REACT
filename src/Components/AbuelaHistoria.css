@@ -46,7 +46,40 @@
 }
 
 .firma {
-    font-style: italic;
-    margin-top: 2rem;
-    color: #777; 
+  font-style: italic;
+  margin-top: 2rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .abuela-section {
+    padding: 2rem 1rem;
+  }
+
+  .abuela-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .abuela-texto,
+  .abuela-imagen {
+    min-width: auto;
+    flex: none;
+    width: 100%;
+  }
+
+  .abuela-texto h2 {
+    font-size: 1.8rem;
+  }
+
+  .abuela-texto p {
+    font-size: 1rem;
+  }
+
+  .abuela-imagen img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }

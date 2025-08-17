@@ -1,9 +1,10 @@
 .contacto-wrapper {
   max-width: 600px;
-  margin: 250px auto 0 auto;
+  margin: 150px auto 0 auto;
   padding: 40px 20px;
   text-align: center;
   font-family: "Arial", sans-serif;
+  margin-top: 275px;
 }
 
 .contacto-wrapper h2 {
@@ -54,4 +55,11 @@
 
 .formulario-contacto button:hover {
   background-color: #ffda3f;
+}
+
+@media (max-width: 480px) {
+  .contacto-wrapper {
+    margin-top: 80px;
+    padding: 20px 10px;
+  }
 }
