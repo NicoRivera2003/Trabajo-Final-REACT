@@ -73,3 +73,38 @@
   border-bottom: 2px solid #000;
   background-color: lightgoldenrodyellow;
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: auto;
+  gap: 5px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 25px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.search-container .search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.search-container .search-btn:hover {
+  color: #ff6600;
+}

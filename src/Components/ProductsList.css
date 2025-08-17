@@ -11,6 +11,7 @@
   /*margin-bottom: 3rem;*/
   color: #333;
   font-weight: bold;
+  margin-top: 270px;
 }
 
 .product-grid {
@@ -21,9 +22,12 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: stretch;
+  justify-items: start; /*-----------*/
+  padding: 20px; /*-------*/
 }
 
 .product-card {
+  width: 200px; /*------*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -91,4 +95,23 @@
 .view-all-btn:hover {
   background-color: #ffcc00;
   transform: scale(1.05);
+}
+
+.resultados-busqueda {
+  margin-top: 40px; /* menos espacio arriba para subir el bloque */
+  padding: 0 20px;
+  padding-top: 150px;
+}
+
+.resultados-busqueda h2 {
+  margin-top: 0; /* ajustar título */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resultados-busqueda .product-grid {
+  margin-top: 10px; /* subir las tarjetas */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }

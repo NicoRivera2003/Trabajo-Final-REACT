@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProductsList.css";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Fuse from "fuse.js";
 
 const products = [
   {
@@ -65,15 +67,32 @@ const products = [
   },
 ];
 
-const ProductList = ({ showAll }) => {
+const ProductList = ({ showAll, filtro = "" }) => {
   const navigate = useNavigate();
-  const displayedProducts = showAll ? products : products.slice(0, 4);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const normalizeText = (text) =>
+    text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+  const productosFiltrados = (showAll ? products : products.slice(0, 4)).filter(
+    (producto) => normalizeText(producto.name).includes(normalizeText(filtro))
+  );
+
+  const hayBusquedaYResultados = filtro && productosFiltrados.length > 0;
 
   return (
-    <section className="product-section">
+    <section
+      className={`product-section ${
+        hayBusquedaYResultados ? "resultados-busqueda" : ""
+      }`}
+    >
       <h2>PRODUCTOS</h2>
       <div className="product-grid">
-        {displayedProducts.map((product) => (
+        {productosFiltrados.map((product) => (
           <div className="product-card" key={product.id}>
             <img src={product.image} alt={product.name} />
             <div className="product-info">
