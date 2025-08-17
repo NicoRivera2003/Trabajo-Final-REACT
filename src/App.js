@@ -5,9 +5,14 @@ import AbuelaHistoria from "./Components/AbuelaHistoria"; /*Importo los componen
 import Footer from "./Components/Footer";
 import Catalogo from "./Pages/Catalogo";
 import Contacto from "./Pages/Contacto";
+import Cart from "./Pages/Cart";
+import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <Router>
       <Header />
@@ -24,6 +29,8 @@ function App() {
           />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />

@@ -1,0 +1,25 @@
+.cart-page {
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 300px;
+}
+
+.empty-cart h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.empty-cart button {
+  background-color: #ffe46d;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.empty-cart Link {
+  color: #333;
+  text-decoration: underline;
+}

@@ -6,13 +6,17 @@ import {
   FiSearch,
   FiShoppingCart,
   FiUser,
+  FiChevronDown,
 } from "react-icons/fi"; /*Librería de iconos de React "Fi "*/
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [busqueda, setBusqueda] = useState("");
   const [mostrarInput, setMostrarInput] = useState(false);
+  const [menuAbierto, setMenuAbierto] = useState(false);
   const navigate = useNavigate();
+  const usuario = localStorage.getItem("usuario");
+
   const handleBuscar = () => {
     if (busqueda.trim() !== "") {
       navigate(`/catalogo?busqueda=${encodeURIComponent(busqueda)}`);
@@ -20,10 +24,9 @@ const Header = () => {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleBuscar();
-    }
+  const cerrarSesion = () => {
+    localStorage.removeItem("usuario");
+    navigate("/");
   };
 
   return (
@@ -49,17 +52,19 @@ const Header = () => {
 
         <div className="header__icons">
           <div className={`search-container ${mostrarInput ? "active" : ""}`}>
-            {mostrarInput ? (
+            {mostrarInput && (
               <input
                 type="text"
                 className="header__search-input"
                 placeholder="Buscar producto"
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
-                onKeyDown={handleKeyDown}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleBuscar();
+                }}
                 autoFocus
               />
-            ) : null}
+            )}
             <button
               onClick={() => {
                 if (mostrarInput && busqueda.trim() !== "") {
@@ -75,12 +80,37 @@ const Header = () => {
             </button>
           </div>
 
-          <button>
+          <button onClick={() => navigate("/cart")}>
             <FiShoppingCart size={24} />
           </button>
-          <button>
-            <FiUser size={24} />
-          </button>
+
+          {usuario ? (
+            <div className="usuario-dropdown">
+              <button
+                className="icono-usuario"
+                onClick={() => setMenuAbierto(!menuAbierto)}
+              >
+                <FiUser size={24} />
+                <FiChevronDown size={16} />
+              </button>
+              {menuAbierto && (
+                <div className="dropdown-menu">
+                  <button onClick={() => navigate("/perfil")}>Perfil</button>
+                  <button onClick={() => navigate("/configuración")}>
+                    Configuración
+                  </button>
+                  <button onClick={cerrarSesion}>Cerrar Sesión</button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button
+              className="icono-usuario"
+              onClick={() => navigate("/login")}
+            >
+              <FiUser size={24} />
+            </button>
+          )}
         </div>
       </div>
     </header>

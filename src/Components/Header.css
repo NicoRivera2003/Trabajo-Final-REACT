@@ -108,3 +108,53 @@
 .search-container .search-btn:hover {
   color: #ff6600;
 }
+
+.usuario-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.icono-usuario {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Justo debajo del botón */
+  left: 75%; /* Alineado a la izquierda del botón */
+  margin-top: 10px; /* Pequeño espacio debajo */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 180px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.usuario-dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f4f4f4;
+}
