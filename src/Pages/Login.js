@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./Login.css";
 
@@ -7,6 +8,7 @@ const Login = () => {
   const [codigoEnviado, setCodigoEnviado] = useState(false);
   const [codigoUsuario, setCodigoUsuario] = useState("");
   const [codigoGenerado, setCodigoGenerado] = useState("");
+  const navigate = useNavigate();
 
   const enviarCodigo = (e) => {
     e.preventDefault();
@@ -48,7 +50,7 @@ const Login = () => {
     }
 
     setTimeout(() => {
-      window.location.href = "/";
+      navigate("/");
     }, 1000);
   };
 
